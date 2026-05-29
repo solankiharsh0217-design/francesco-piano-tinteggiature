@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #1E40AF;
+  --color-primary-light: #3B82F6;
+  --color-primary-dark: #1E3A8A;
+  --color-cta: #F97316;
+  --color-cta-hover: #EA580C;
+  --color-bg: #EFF6FF;
+  --color-bg-white: #FFFFFF;
+  --color-text: #1E3A8A;
+  --color-text-muted: #475569;
+  --color-accent: #D97706;
+  --font-heading: var(--font-poppins);
+  --font-body: var(--font-open-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-in-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(249, 115, 22, 0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fade-in-left 0.6s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15);
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+}
+
+.gradient-cta {
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.85) 0%, rgba(30, 58, 138, 0.75) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in-left,
+  .animate-fade-in-right,
+  .animate-scale-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
