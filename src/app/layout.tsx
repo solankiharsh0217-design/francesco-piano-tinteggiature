@@ -1,39 +1,40 @@
 import type { Metadata } from "next";
-import { Poppins, Open_Sans } from "next/font/google";
+import { Bodoni_Moda, Jost } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const bodoni = Bodoni_Moda({
+  variable: "--font-bodoni",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Francesco Piano Tinteggiature | Bergamo",
+  title: "Francesco Piano | Tinteggiature di Lusso a Bergamo",
   description:
-    "Tinteggiature, verniciature, stucchi, decorazioni, pitture ed intonaci a Bergamo. Artigiano con oltre 20 anni di esperienza.",
+    "Tinteggiature, verniciature, stucchi e decorazioni di alto livello a Bergamo. Artigiano con oltre 20 anni di esperienza in lavorazioni premium.",
   keywords: [
     "tinteggiatura Bergamo",
     "verniciatura Bergamo",
     "decorazioni Bergamo",
     "imbiancatura Bergamo",
+    "tinteggiatura di lusso",
     "pintor Bergamo",
   ],
   openGraph: {
-    title: "Francesco Piano Tinteggiature | Bergamo",
+    title: "Francesco Piano | Tinteggiature di Lusso a Bergamo",
     description:
-      "Tinteggiature, verniciature, stucchi, decorazioni a Bergamo",
+      "Tinteggiature, verniciature, stucchi e decorazioni di alto livello a Bergamo",
     url: "https://pianofrancescotinteggiature.com",
     siteName: "Francesco Piano Tinteggiature",
     locale: "it_IT",
@@ -47,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" className={`${poppins.variable} ${openSans.variable}`}>
+    <html lang="it" className={`${bodoni.variable} ${jost.variable}`}>
       <body className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
